@@ -4,6 +4,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 import pickle
 import numpy as np
+import uvicorn
 
 app = FastAPI()
 
@@ -62,5 +63,7 @@ def predict(input_data: InputData):
     
     return {"prediction": "Positive" if prediction == 1 else "Negative"}
 
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
 
 # Run the FastAPI app using: uvicorn main:app --reload
