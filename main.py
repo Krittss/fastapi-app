@@ -4,9 +4,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 import pickle
 import numpy as np
-import pandas as pd
 import uvicorn
-from typing import List
 
 app = FastAPI()
 
@@ -50,33 +48,21 @@ def signup_page():
 class InputData(BaseModel):
     data: list
 
-feature_names = [
-    'Age',
-    'Number of sexual partners',
-    'First sexual intercourse',
-    'Num of pregnancies',
-    'Smokes',
-    'Hormonal Contraceptives',
-    'STDs',
-    'STDs: Number of diagnosis',
-    'STDs: Time since last diagnosis',
-    'STDs: Time since first diagnosis'
-]
 @app.post("/predict")
-def predict(data: List[float]):
-    print(f"Received Input: data={data}")
+def predict(input_data: InputData):
+    print("Received Input:", input_data)  # Debugging Line
     
-    # Convert list to DataFrame with column names
-    input_df = pd.DataFrame([data], columns=feature_names)
+    if model is None:
+        return {"error": "Model not loaded"}
 
-    # Make prediction
-    prediction = model.predict(input_df)
-    probability = model.predict_proba(input_df).max() * 100  # confidence %
+    # Convert list to NumPy array
+    input_array = np.array(input_data.data).reshape(1, -1)
+    
+    # Run the prediction
+    prediction = model.predict(input_array)[0]
+    
+    return {"prediction": "Positive" if prediction == 1 else "Negative"}
 
-    return {
-        "prediction": int(prediction[0]),
-        "confidence": f"{probability:.2f}%"
-    }
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
 
