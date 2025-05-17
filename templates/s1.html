@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cervical Cancer Screening</title>
+    <link rel="stylesheet" href="s1.css">
+    <script defer src="script.js"></script> <!-- Added JavaScript for handling form submission -->
+</head>
+<body>
+    <header>
+        <h1>Cervical Cancer Risk Screening</h1>
+        <p>Fill in the details below to assess your risk.</p>
+    </header>
+
+    <main>
+        <section class="screening-form">
+            <h2>Cervical Cancer Screening</h2>
+            <form id="screening-form">  <!-- Changed action to JavaScript-based handling -->
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="Age" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="partners">Number of Sexual Partners:</label>
+                    <input type="number" id="partners" name="Number_of_sexual_partners" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="first-intercourse">First Sexual Intercourse (Age):</label>
+                    <input type="number" id="first-intercourse" name="First_sexual_intercourse" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pregnancies">Number of Pregnancies:</label>
+                    <input type="number" id="pregnancies" name="Num_of_pregnancies" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="smoking">Do you smoke?</label>
+                    <select id="smoking" name="Smokes" required>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="std">Have you had any STDs?</label>
+                    <select id="std" name="STDs" required>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="std-hpv">Have you had HPV?</label>
+                    <select id="std-hpv" name="STDs_HPV" required>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="std-hiv">Have you had HIV?</label>
+                    <select id="std-hiv" name="STDs_HIV" required>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="dx-cancer">Have you been diagnosed with Cancer?</label>
+                    <select id="dx-cancer" name="Dx_Cancer" required>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="dx">Other Diagnosis:</label>
+                    <select id="dx" name="Dx" required>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+
+            <p id="result"></p> <!-- Added this to display the prediction result -->
+        </section>
+    </main>
+</body>
+</html>

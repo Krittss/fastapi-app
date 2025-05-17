@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif, Impact;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d4ece6;
+    padding: 15px 50px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00695c;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #10ADA0;
+    font-size: 18px;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the left */
+    padding: 80px;
+    height: 67vh;
+    background: url('file:///C:/Users/cw/Desktop/cerviScan/crop-hands-with-light-blue-ribbon.jpg') no-repeat center center/cover;
+    
+   
+}
+
+.text {
+    width: 50%;
+    text-align: left; /* Align text to the left */
+    
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #0C7A71;
+    
+}
+
+.highlight {
+    color: #03423c;
+    font-weight: bold;
+    
+}
+
+p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+}
+
+#start-btn {
+    background-color: #00695c;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+}
